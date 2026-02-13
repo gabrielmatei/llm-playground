@@ -1,0 +1,18 @@
+{
+  "name": "llm-playground",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier . --write",
+    "typecheck": "tsc -b",
+    "exp:01": "pnpm --filter @exp/01-basic-chat dev"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

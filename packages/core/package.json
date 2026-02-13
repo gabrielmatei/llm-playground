@@ -1,0 +1,13 @@
+{
+  "name": "@repo/core",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@google/genai": "^1.41.0",
+    "dotenv": "^16.4.5"
+  }
+}
