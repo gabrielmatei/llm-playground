@@ -11,6 +11,8 @@ export type ChatRequest = {
   messages: ChatMessage[];
   temperature?: number;
   responseSchema?: object;
+  maxRetries?: number;
+  timeout?: number;
 };
 
 export type ChatResponse = {
