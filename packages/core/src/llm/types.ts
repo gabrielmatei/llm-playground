@@ -18,3 +18,5 @@ export type ChatResponse = {
   raw?: unknown;
 };
 
+export type ChatStreamResponse = AsyncGenerator<string, void, unknown>;
+

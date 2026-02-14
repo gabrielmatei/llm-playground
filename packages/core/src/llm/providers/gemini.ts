@@ -1,5 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
-import { ChatRequest, ChatResponse } from "../types.js";
+import { ChatRequest, ChatResponse, ChatStreamResponse } from "../types.js";
 
 export async function geminiChat(apiKey: string, req: ChatRequest): Promise<ChatResponse> {
   const gemini = new GoogleGenAI({ apiKey });
@@ -19,4 +19,28 @@ export async function geminiChat(apiKey: string, req: ChatRequest): Promise<Chat
 
   const content = response.text ?? "";
   return { content, raw: response };
+}
+
+export async function* geminiStreamChat(apiKey: string, req: ChatRequest): ChatStreamResponse {
+  const gemini = new GoogleGenAI({ apiKey });
+
+  const result = await gemini.models.generateContentStream({
+    model: req.model,
+    contents: req.messages.map((m) => ({
+      role: m.role === "assistant" ? "model" : "user",
+      parts: [{ text: m.content }]
+    })),
+    config: {
+      temperature: req.temperature,
+      responseMimeType: req.responseSchema ? "application/json" : undefined,
+      responseSchema: req.responseSchema,
+    }
+  });
+
+  for await (const chunk of result) {
+    const text = chunk.text;
+    if (text) {
+      yield text;
+    }
+  }
 }

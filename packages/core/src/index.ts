@@ -1,2 +1,2 @@
-export { chat } from "./llm/client.js";
+export { chat, streamChat } from "./llm/client.js";
 export type { ChatMessage } from "./llm/types.js";
