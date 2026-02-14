@@ -1,0 +1,12 @@
+{
+  "name": "@exp/02-prompt-patterns",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@repo/core": "workspace:*"
+  },
+  "scripts": {
+    "dev": "tsx src/run.ts"
+  }
+}
