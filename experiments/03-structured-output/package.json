@@ -1,0 +1,13 @@
+{
+  "name": "@exp/03-structured-output",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@repo/core": "workspace:*",
+    "zod": "^4.3.6"
+  },
+  "scripts": {
+    "dev": "tsx src/run.ts"
+  }
+}

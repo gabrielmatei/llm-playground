@@ -7,7 +7,8 @@
     "format": "prettier . --write",
     "typecheck": "tsc -b",
     "exp:01": "pnpm --filter @exp/01-basic-chat dev",
-    "exp:02": "pnpm --filter @exp/02-prompt-patterns dev"
+    "exp:02": "pnpm --filter @exp/02-prompt-patterns dev",
+    "exp:03": "pnpm --filter @exp/03-structured-output dev"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

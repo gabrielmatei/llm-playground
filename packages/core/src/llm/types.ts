@@ -10,6 +10,7 @@ export type ChatRequest = {
   model: string;
   messages: ChatMessage[];
   temperature?: number;
+  responseSchema?: object;
 };
 
 export type ChatResponse = {
