@@ -5,6 +5,18 @@ export type ChatMessage = {
   content: string;
 };
 
+export type Tool = {
+  name: string;
+  description: string;
+  parameters: object;
+};
+
+export type ToolCall = {
+  id?: string;
+  name: string;
+  args: object;
+};
+
 export type ChatRequest = {
   provider?: Provider;
   model: string;
@@ -13,10 +25,12 @@ export type ChatRequest = {
   responseSchema?: object;
   maxRetries?: number;
   timeout?: number;
+  tools?: Tool[];
 };
 
 export type ChatResponse = {
   content: string;
+  toolCalls?: ToolCall[];
   raw?: unknown;
 };
 
