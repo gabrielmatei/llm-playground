@@ -13,7 +13,8 @@
     "exp:05": "pnpm --filter @exp/05-retries-timeouts dev",
     "exp:06": "pnpm --filter @exp/06-single-tool-calling dev",
     "exp:07": "pnpm --filter @exp/07-multi-step-agent-loop dev",
-    "exp:08": "pnpm --filter @exp/08-tool-error-recovery dev"
+    "exp:08": "pnpm --filter @exp/08-tool-error-recovery dev",
+    "exp:09": "pnpm --filter @exp/09-dynamic-tool-routing dev"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
