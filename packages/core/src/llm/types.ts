@@ -1,8 +1,10 @@
 export type Provider = "google" | "openai" | "anthropic";
 
 export type ChatMessage = {
-  role: "system" | "user" | "assistant";
+  role: "system" | "user" | "assistant" | "tool";
   content: string;
+  toolCallId?: string;
+  toolCalls?: ToolCall[];
 };
 
 export type Tool = {

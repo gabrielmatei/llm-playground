@@ -14,10 +14,34 @@ export async function geminiChat(apiKey: string, req: ChatRequest): Promise<Chat
 
   const response = await gemini.models.generateContent({
     model: req.model,
-    contents: req.messages.map((m) => ({
-      role: m.role === "assistant" ? "model" : "user",
-      parts: [{ text: m.content }]
-    })),
+    contents: req.messages.map((m) => {
+      const role = m.role === "assistant" ? "model" : "user";
+      const parts: any[] = [];
+
+      if (m.content) parts.push({ text: m.content });
+
+      if (m.toolCalls) {
+        m.toolCalls.forEach(tc => {
+          parts.push({
+            functionCall: {
+              name: tc.name,
+              args: tc.args
+            }
+          });
+        });
+      }
+
+      if (m.role === "tool") {
+        parts.push({
+          functionResponse: {
+            name: m.toolCallId ?? "unknown",
+            response: { result: m.content }
+          }
+        });
+      }
+
+      return { role, parts };
+    }),
     config: {
       temperature: req.temperature,
       responseMimeType: req.responseSchema ? "application/json" : undefined,

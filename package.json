@@ -11,7 +11,8 @@
     "exp:03": "pnpm --filter @exp/03-structured-output dev",
     "exp:04": "pnpm --filter @exp/04-streaming dev",
     "exp:05": "pnpm --filter @exp/05-retries-timeouts dev",
-    "exp:06": "pnpm --filter @exp/06-single-tool-calling dev"
+    "exp:06": "pnpm --filter @exp/06-single-tool-calling dev",
+    "exp:07": "pnpm --filter @exp/07-multi-step-agent-loop dev"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
