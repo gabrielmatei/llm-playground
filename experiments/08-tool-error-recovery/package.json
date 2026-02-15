@@ -1,0 +1,13 @@
+{
+  "name": "@exp/08-tool-error-recovery",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@repo/core": "workspace:*",
+    "zod": "^3.23.8"
+  },
+  "scripts": {
+    "dev": "tsx src/run.ts"
+  }
+}

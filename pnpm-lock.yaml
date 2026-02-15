@@ -75,6 +75,15 @@ importers:
         specifier: ^3.23.8
         version: 3.25.76
 
+  experiments/08-tool-error-recovery:
+    dependencies:
+      '@repo/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      zod:
+        specifier: ^3.23.8
+        version: 3.25.76
+
   packages/core:
     dependencies:
       '@google/genai':
